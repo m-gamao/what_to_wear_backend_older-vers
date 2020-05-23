@@ -1,2 +1,3 @@
 class Outfit < ApplicationRecord
+  
 end
