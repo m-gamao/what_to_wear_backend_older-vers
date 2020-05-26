@@ -1,8 +1,15 @@
 class Api::V1::OutfitsController < ApplicationController
   def index
     outfits = Outfit.all
-    render json: outfits
-    #render json: OutfitSerializer.new(@outfits)
+    #render json: outfits
+      
+     #options = {
+  ##include associated weather - whatever you put into the below square brackets 
+  ##comes from the associations in the model
+	   #include: [:category]
+#    }
+
+    render json: OutfitSerializer.new(@outfits)
   end
  
   def create
