@@ -1,3 +1,3 @@
 class Outfit < ApplicationRecord
-  belongs_to :weathers
+  belongs_to :weather
 end

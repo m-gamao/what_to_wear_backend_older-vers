@@ -1,12 +1,12 @@
-class Api::V1::WeathersController < ApplicationController
+class Api::V1::WeatherController < ApplicationController
   def index
-    weathers = Weather.all
+    weather = Weather.all
    #render json: weathers
     render json: WeatherSerializer.new(@weathers)
   end
  
   def create
-    weathers = Weather.all(weather_params)
+    weather = Weather.all(weather_params)
     if weather.save
       render json: weather, status: :accepted
     else
