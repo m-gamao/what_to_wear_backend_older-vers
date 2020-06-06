@@ -3,8 +3,7 @@ class CreateOutfits < ActiveRecord::Migration[6.0]
     create_table :outfits do |t|
       t.string :name
       t.string :description
-      t.bigint :weather_id
-      t.timestamps
+      t.bigint :condition_id
     end
   end
 end

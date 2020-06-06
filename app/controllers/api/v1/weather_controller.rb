@@ -1,23 +1,23 @@
-class Api::V1::WeatherController < ApplicationController
+class Api::V1::ConditionsController < ApplicationController
   def index
-    weather = Weather.all
-   #render json: weathers
-    render json: WeatherSerializer.new(@weathers)
+    conditions = Condition.all
+   #render json: conditions
+    render json: ConditionSerializer.new(@conditions)
   end
  
   def create
-    weather = Weather.all(weather_params)
-    if weather.save
-      render json: weather, status: :accepted
+    condition = Condition.all(condition_params)
+    if condition.save
+      render json: condition, status: :accepted
     else
-      render json: {errors: weather.errors.full_messages}, status: unprocessible_entity
+      render json: {errors: condition.errors.full_messages}, status: unprocessible_entity
     end
   end
  
   private
  
-  def weather_params
-    params.require(:weather).permit(:name, :description, :image_url, :outfit_ids)
+  def condition_params
+    params.require(:condition).permit(:description, :temperature)
   end
 end
  

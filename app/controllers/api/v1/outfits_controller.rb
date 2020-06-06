@@ -7,7 +7,7 @@ class Api::V1::OutfitsController < ApplicationController
   ##include associated weather - whatever you put into the below square brackets 
   ##comes from the associations in the model
 	   #include: [:category]
-#    }
+# }
 
     render json: OutfitSerializer.new(@outfits)
   end
@@ -24,7 +24,7 @@ class Api::V1::OutfitsController < ApplicationController
   private
  
   def outfit_params
-    params.require(:outfit).permit(:name, :description, :image_url, :weather_id)
+    params.require(:outfit).permit(:set, :description, :condition_id)
   end
 end
 
