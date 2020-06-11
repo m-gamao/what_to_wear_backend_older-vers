@@ -1,5 +1,5 @@
 class ConditionSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :description
-  has_many :outfits
+  attributes :description, :temperature, :outfit_id
+  has_many :cities_conditions
 end

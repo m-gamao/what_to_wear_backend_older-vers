@@ -17,7 +17,7 @@ class Api::V1::ConditionsController < ApplicationController
   private
  
   def condition_params
-    params.require(:condition).permit(:description, :temperature)
+    params.require(:condition).permit(:description, :temperature, :city_id)
   end
 end
  

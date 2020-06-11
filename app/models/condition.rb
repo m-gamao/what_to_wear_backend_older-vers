@@ -1,3 +1,3 @@
 class Condition < ApplicationRecord
-  has_many :outfits
+  has_many :cities_conditions
 end
